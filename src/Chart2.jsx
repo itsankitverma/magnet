@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Bar } from "react-chartjs-2";
-import axios from "axios";
 import data1 from "./Data2.json";
 
-const Dankmemes = () => {
+const Chart2 = () => {
   const [chartData, setChartData] = useState({});
-  const [employeeSalary, setEmployeeSalary] = useState([]);
-  const [employeeAge, setEmployeeAge] = useState([]);
-
-  // let url = "https://sigviewauth.sigmoid.io/api/v1/getData";
 
   const requestOptions = {
     method: "POST",
@@ -21,28 +16,12 @@ const Dankmemes = () => {
 
     body: JSON.stringify(data1),
   };
-  // const a = []
-
-  // fetch(url, requestOptions)
-  //   .then((response) => response.json())
-  //   // .then((datas) =>  setpublish({ datas }));
-  //   .then((data) => {a.push(data.result.data)
-  //   console.log(data)
-  //   for (const dataObj of data.result.data) {
-  //     identity.push(dataObj.publisherId)
-  //     no.push(parseInt(dataObj.impressions_offered))
-    // }}
-    // );
-
-
-
-
 
 
   const chart = () => {
     let appSiteId = [];
     let impressions_offered = [];
-      
+     
       fetch("https://sigviewauth.sigmoid.io/api/v1/getData", requestOptions)
       .then((response) => response.json())
       .then(res => {
@@ -55,10 +34,20 @@ const Dankmemes = () => {
           labels: appSiteId,
           datasets: [
             {
-              label: "level of thiccness",
+              label: "Data Analysis",
               data: impressions_offered,
-              backgroundColor: ["red", "blue", "green", "blue", "red", "blue", "blue", "green", "blue", "red", "blue", "blue", "green", "blue", "red", "blue", "blue", "green", "blue", "red", "blue", "blue", "green", "blue", "red", "blue"], 
- fillColor: "rgba(220,220,220,0.5)", 
+              backgroundColor: [ "red", "blue", "green", "blue", "red", "blue",
+              "red", "blue", "green", "blue", "red", "blue",
+              "red", "blue", "green", "blue", "red", "blue", "blue", 
+              "green", "blue", "red", "blue", "blue", "green", "blue",
+               "red", "blue", "blue", "green", "blue", "red", "blue", "blue",
+                "green", "blue", "red", "blue", "red", "blue", "green", "blue", "red", "blue",
+                "red", "blue", "green", "blue", "red", "blue",
+                "red", "blue", "green", "blue", "red", "blue", "blue", 
+                "green", "blue", "red", "blue", "blue", "green", "blue",
+                 "red", "blue", "blue", "green", "blue", "red", "blue", "blue",
+                  "green", "blue", "red", "blue"], 
+              fillColor: "rgba(220,220,220,0.5)", 
               strokeColor: "rgba(220,220,220,0.8)", 
               highlightFill: "rgba(220,220,220,0.75)",
               highlightStroke: "rgba(220,220,220,1)",
@@ -84,7 +73,7 @@ const Dankmemes = () => {
           data={chartData}
           options={{
             responsive: true,
-            title: { text: "THICCNESS SCALE", display: true },
+            // title: { text: "THICCNESS SCALE", display: true },
             scales: {
               yAxes: [
                 {
@@ -113,4 +102,4 @@ const Dankmemes = () => {
   );
 };
 
-export default Dankmemes;
+export default Chart2;

@@ -1,0 +1,215 @@
+{
+  "status": {
+    "statusCode": "200",
+    "statusMessage": "Success"
+  },
+  "result": {
+    "data": [
+      {
+        "advertiserId": "Coca-Cola",
+        "CM001": "1361.609762627007",
+        "CM001_percent": "59.8752"
+      },
+      {
+        "advertiserId": "Mondelez International",
+        "CM001": "322.31626760401264",
+        "CM001_percent": "14.1735"
+      },
+      {
+        "advertiserId": "Amazon",
+        "CM001": "109.54889894440008",
+        "CM001_percent": "4.8173"
+      },
+      {
+        "advertiserId": "Unilever",
+        "CM001": "86.7886757767998",
+        "CM001_percent": "3.8164"
+      },
+      {
+        "advertiserId": "Philip Morris",
+        "CM001": "86.73404316699987",
+        "CM001_percent": "3.814"
+      },
+      {
+        "advertiserId": "Maruti",
+        "CM001": "56.02966604730008",
+        "CM001_percent": "2.4638"
+      },
+      {
+        "advertiserId": "Toyota",
+        "CM001": "41.007999973",
+        "CM001_percent": "1.8033"
+      },
+      {
+        "advertiserId": "Hyundai",
+        "CM001": "40.824",
+        "CM001_percent": "1.7952"
+      },
+      {
+        "advertiserId": "Nestle",
+        "CM001": "39.46201869149998",
+        "CM001_percent": "1.7353"
+      },
+      {
+        "advertiserId": "Procter & Gamble",
+        "CM001": "31.281406471699977",
+        "CM001_percent": "1.3756"
+      },
+      {
+        "advertiserId": "King",
+        "CM001": "27.58727951830002",
+        "CM001_percent": "1.2131"
+      },
+      {
+        "advertiserId": "iVdopia",
+        "CM001": "24.708616369300007",
+        "CM001_percent": "1.0865"
+      },
+      {
+        "advertiserId": "PepsiCo",
+        "CM001": "14.9065",
+        "CM001_percent": "0.6555"
+      },
+      {
+        "advertiserId": "Giant Media",
+        "CM001": "6.009122562000001",
+        "CM001_percent": "0.2642"
+      },
+      {
+        "advertiserId": "rtbiq",
+        "CM001": "5.5387712912",
+        "CM001_percent": "0.2436"
+      },
+      {
+        "advertiserId": "Colgate",
+        "CM001": "3.4841726822",
+        "CM001_percent": "0.1532"
+      },
+      {
+        "advertiserId": "Smaato",
+        "CM001": "2.8528699755999996",
+        "CM001_percent": "0.1255"
+      },
+      {
+        "advertiserId": "Adtheorent",
+        "CM001": "2.2882914711",
+        "CM001_percent": "0.1006"
+      },
+      {
+        "advertiserId": "TubeMogul | PMP",
+        "CM001": "2.156",
+        "CM001_percent": "0.0948"
+      },
+      {
+        "advertiserId": "dynAdmic",
+        "CM001": "1.856",
+        "CM001_percent": "0.0816"
+      },
+      {
+        "advertiserId": "Pubmatic",
+        "CM001": "1.2750001275",
+        "CM001_percent": "0.0561"
+      },
+      {
+        "advertiserId": "Drawbridge ",
+        "CM001": "1.2129531272",
+        "CM001_percent": "0.0533"
+      },
+      {
+        "advertiserId": "Q1 Media",
+        "CM001": "1.0929780589999998",
+        "CM001_percent": "0.0481"
+      },
+      {
+        "advertiserId": "Zapr",
+        "CM001": "0.9132612688999998",
+        "CM001_percent": "0.0402"
+      },
+      {
+        "advertiserId": "SmartyAds LLP",
+        "CM001": "0.7741693624999999",
+        "CM001_percent": "0.034"
+      },
+      {
+        "advertiserId": "thinknear",
+        "CM001": "0.6489416569999998",
+        "CM001_percent": "0.0285"
+      },
+      {
+        "advertiserId": "AdMaxim",
+        "CM001": "0.48951279999999997",
+        "CM001_percent": "0.0215"
+      },
+      {
+        "advertiserId": "Uber Media",
+        "CM001": "0.33095523950000005",
+        "CM001_percent": "0.0146"
+      },
+      {
+        "advertiserId": "SmartRTB",
+        "CM001": "0.2101923185",
+        "CM001_percent": "0.0092"
+      },
+      {
+        "advertiserId": "Tremor Media:2124",
+        "CM001": "0.07840000000000001",
+        "CM001_percent": "0.0034"
+      },
+      {
+        "advertiserId": "IQM:2257",
+        "CM001": "0.061500719700000005",
+        "CM001_percent": "0.0027"
+      },
+      {
+        "advertiserId": "Data Not Available",
+        "CM001": "0.0",
+        "CM001_percent": "0.0"
+      },
+      {
+        "advertiserId": "Team AOL | US",
+        "CM001": "0.0",
+        "CM001_percent": "0.0"
+      },
+      {
+        "advertiserId": "Zephyr Digital",
+        "CM001": "0.0",
+        "CM001_percent": "0.0"
+      },
+      {
+        "advertiserId": "Tremor Media",
+        "CM001": "0.0",
+        "CM001_percent": "0.0"
+      },
+      {
+        "advertiserId": "C1exchange",
+        "CM001": "0.0",
+        "CM001_percent": "0.0"
+      },
+      {
+        "advertiserId": "NiuTux Digital Media Pvt Ltd",
+        "CM001": "0.0",
+        "CM001_percent": "0.0"
+      },
+      {
+        "advertiserId": "Dabur",
+        "CM001": "0.0",
+        "CM001_percent": "0.0"
+      },
+      {
+        "advertiserId": "Adsmovil",
+        "CM001": "0.0",
+        "CM001_percent": "0.0"
+      },
+      {
+        "advertiserId": "Verta Media",
+        "CM001": "0.0",
+        "CM001_percent": "0.0"
+      },
+      {
+        "advertiserId": "Engage BDR",
+        "CM001": "0.0",
+        "CM001_percent": "0.0"
+      }
+    ]
+  }
+}

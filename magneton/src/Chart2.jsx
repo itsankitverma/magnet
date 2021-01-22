@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Bar } from "react-chartjs-2";
-import data1 from "./Data.json";
+import data1 from "./Data2.json";
 
-const Dankmemes = () => {
+const Chart2 = () => {
   const [chartData, setChartData] = useState({});
-  const [employeeSalary, setEmployeeSalary] = useState([]);
-  const [employeeAge, setEmployeeAge] = useState([]);
-
-  // let url = "https://sigviewauth.sigmoid.io/api/v1/getData";
 
   const requestOptions = {
     method: "POST",
@@ -20,44 +16,40 @@ const Dankmemes = () => {
 
     body: JSON.stringify(data1),
   };
-  // const a = []
-
-  // fetch(url, requestOptions)
-  //   .then((response) => response.json())
-  //   // .then((datas) =>  setpublish({ datas }));
-  //   .then((data) => {a.push(data.result.data)
-  //   console.log(data)
-  //   for (const dataObj of data.result.data) {
-  //     identity.push(dataObj.publisherId)
-  //     no.push(parseInt(dataObj.impressions_offered))
-    // }}
-    // );
-
-
-
-
 
 
   const chart = () => {
-    let publisherId = [];
+    let appSiteId = [];
     let impressions_offered = [];
-    
+
+    date ka issue BottomNavigationAction... wait
+      
       fetch("https://sigviewauth.sigmoid.io/api/v1/getData", requestOptions)
       .then((response) => response.json())
       .then(res => {
         console.log(res);
         for (const dataObj of res.result.data) {
-          publisherId.push(dataObj.publisherId);
+          appSiteId.push(dataObj.appSiteId);
           impressions_offered.push(parseInt(dataObj.impressions_offered));
         }
         setChartData({
-          labels: publisherId,
+          labels: appSiteId,
           datasets: [
             {
-              label: "level of thiccness",
+              label: "Data Analysis",
               data: impressions_offered,
-              backgroundColor: ["red", "blue", "green", "blue", "red", "blue", "blue", "green", "blue", "red", "blue", "blue", "green", "blue", "red", "blue", "blue", "green", "blue", "red", "blue", "blue", "green", "blue", "red", "blue"], 
- fillColor: "rgba(220,220,220,0.5)", 
+              backgroundColor: [ "red", "blue", "green", "blue", "red", "blue",
+              "red", "blue", "green", "blue", "red", "blue",
+              "red", "blue", "green", "blue", "red", "blue", "blue", 
+              "green", "blue", "red", "blue", "blue", "green", "blue",
+               "red", "blue", "blue", "green", "blue", "red", "blue", "blue",
+                "green", "blue", "red", "blue", "red", "blue", "green", "blue", "red", "blue",
+                "red", "blue", "green", "blue", "red", "blue",
+                "red", "blue", "green", "blue", "red", "blue", "blue", 
+                "green", "blue", "red", "blue", "blue", "green", "blue",
+                 "red", "blue", "blue", "green", "blue", "red", "blue", "blue",
+                  "green", "blue", "red", "blue"], 
+              fillColor: "rgba(220,220,220,0.5)", 
               strokeColor: "rgba(220,220,220,0.8)", 
               highlightFill: "rgba(220,220,220,0.75)",
               highlightStroke: "rgba(220,220,220,1)",
@@ -69,6 +61,7 @@ const Dankmemes = () => {
       .catch(err => {
         console.log(err);
       });
+      console.log("this is app iste ",appSiteId)
   };
 
   useEffect(() => {
@@ -76,13 +69,13 @@ const Dankmemes = () => {
   }, []);
   return (
     <div className="App">
-      <h1>CHART - 1</h1>
+      <h1>CHART - 2</h1>
       <div>
         <Bar
           data={chartData}
           options={{
             responsive: true,
-            title: { text: "THICCNESS SCALE", display: true },
+            // title: { text: "THICCNESS SCALE", display: true },
             scales: {
               yAxes: [
                 {
@@ -111,4 +104,4 @@ const Dankmemes = () => {
   );
 };
 
-export default Dankmemes;
+export default Chart2;
