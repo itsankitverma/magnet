@@ -1,34 +1,14 @@
-import { Chart } from "react-google-charts";
-import "./App.css";
-import React, { useState } from "react";
-import data1 from "./Data.json";
-import t1data from "./json/Third.json";
-import NewChart from "./NewChart";
+import React, { useState, useEffect } from "react";
 import { Bar } from "react-chartjs-2";
-export default function Datafet() {
-  const [publish, setpublish] = useState(false);
-  const [ID, setID] = useState([]);
-  const [imp, setimp] = useState([]);
-  const [publisher, setpublisher] = useState([]);
-  let a = [];
+import axios from "axios";
+import data1 from "./Data2.json";
 
-  let b = [];
+const Dankmemes = () => {
+  const [chartData, setChartData] = useState({});
+  const [employeeSalary, setEmployeeSalary] = useState([]);
+  const [employeeAge, setEmployeeAge] = useState([]);
 
-  let c = [];
-  let data = {
-    datasets: [
-      {
-        barPercentage: 20.5,
-        barThickness: 65,
-        maxBarThickness: 20,
-        minBarLength: 2,
-        data: c,
-        label: b,
-      },
-    ],
-  };
-  // function Trials() {
-  let url = "https://sigviewauth.sigmoid.io/api/v1/getData";
+  // let url = "https://sigviewauth.sigmoid.io/api/v1/getData";
 
   const requestOptions = {
     method: "POST",
@@ -36,97 +16,101 @@ export default function Datafet() {
       "Content-Type": "application/json",
       accept: "application/json",
       "x-auth-token":
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyLUNnXC81eGRJM0lqanFBdWlCUjhsTDNTMlM5WUQxcmZJU1pcL0VWZXlmc1FZQXFMWHlQZ0lWbjc5N2plN2FkYUNZZ3VWREJ0bGhuMmZCUDZZZ29BZnBzWjRnb1llZElSek50cG92anR6azBpdmdQZHc9PSIsImlzcyI6InJhaHVsa3VtYXIiLCJleHAiOjE2MTEzMDMyNjMsImlhdCI6MTYxMTIxNjg2MywianRpIjoiMmI1MjY1YTc2MTkwOThjNmQxNmIxZmEwOTY2YjIzMzk2ZDk4ZmUyMzdjNzEyMTE4MWUwYzdlYzAxYzhjNjVmMzUyMzM3NTVlODUyYzZhOWMxODM2YjQzZTEzYmMzOTI4YTE1NmY0NGEzZWE1MjcwYzY4NjllNmIwOWI1Y2M3NTY0NGE4ODc3MmRkMWNmZTMzZTRmMjk1Y2NiNmRlMGZhMWIzMjI5OTM4NTgxNzljYmM5MzM4MGViNjgyNDU4NmFkMjBjMzYxM2IyMzFiYWE0MjljMGFhMTEyNjczZWM3NzYxOTFlOTRkM2FhNzRmZDhjMmQ3MWM3ZmNhNGNiMTc0MiJ9.uRbU-TNzmTJLbg3YVCZtAcELDpumw3yHtuvdNwU6utw",
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyLWVQYnBBbHk2VDVEWWNGYjh4WWtOYmJ4ZExRMjV5eUVMeXdmaGpSYkJxOWFjeE5wRTVuR2FmMnI4ZGJ4N1lWOEVXZm1qbmNZTmZxN3pCbEp0RzArMnBSc1d0N1BoSDlPTjZyTVZUSitMMXlLT3V3PT0iLCJpc3MiOiJyYWh1bGt1bWFyIiwiZXhwIjoxNjExMzkwMTg5LCJpYXQiOjE2MTEzMDM3ODksImp0aSI6IjIzM2FiZThhYTE5ZThmZGI5MmE2OGY3MmQyZGMxZThkYWRhNDA1YmZkMjgwMTQ2MDhhMTQ1YWM4MjdkZjcyZTdkZDgxODdiZTM4NWQ2MjFiMjhjN2EwN2I3NWY0ZGU2NDg4ZjE4MjY4YjJkZjI0ZGI3MDhjMjVjZWZhM2I2ZmE0ZWIyNWM2MjdhZGQ0ODcxZDBkMGE2NTBlNzc2ZDljNzgzNTJkNzNlMmYxNmYxY2VmYjhhMzM3Y2Y1NTFiNDM2ZGU4NGRhNjNhNzJjMWJlY2VhNGY4MTE5MDZiZjg4YTNkMGE0MzAxN2NmMmZmZGFmOTE5YjE3ZjIyNjQxOWIyYjMifQ.UaYHdG4PEj9Y9KDMsMZFEvpy8s2TxtREzGiwrGL5GPs",
     },
 
     body: JSON.stringify(data1),
   };
   // const a = []
 
-  fetch(url, requestOptions)
-    .then((response) => response.json())
-    // .then((datas) =>  setpublish({ datas }));
-    .then(async (data) => await a.push(data.result.data));
-  // console.log(a[0]);
+  // fetch(url, requestOptions)
+  //   .then((response) => response.json())
+  //   // .then((datas) =>  setpublish({ datas }));
+  //   .then((data) => {a.push(data.result.data)
+  //   console.log(data)
+  //   for (const dataObj of data.result.data) {
+  //     identity.push(dataObj.publisherId)
+  //     no.push(parseInt(dataObj.impressions_offered))
+    // }}
+    // );
 
-  setTimeout(() => {
-    a[0].map((value) => {
-      b.push(value.publisherId);
-      c.push(Number(value.impressions_offered));
-    });
-  }, 3000);
 
-  console.log("data", data);
 
-  let MapPublis = [];
-  console.log(MapPublis);
-  let MapImp = [];
-  console.log(MapImp);
-  console.log(c);
-  // console.log(a);
-  console.log(b);
 
+
+
+  const chart = () => {
+    let appSiteId = [];
+    let impressions_offered = [];
+      
+      fetch("https://sigviewauth.sigmoid.io/api/v1/getData", requestOptions)
+      .then((response) => response.json())
+      .then(res => {
+        console.log(res);
+        for (const dataObj of res.result.data) {
+          appSiteId.push(dataObj.appSiteId);
+          impressions_offered.push(parseInt(dataObj.impressions_offered));
+        }
+        setChartData({
+          labels: appSiteId,
+          datasets: [
+            {
+              label: "level of thiccness",
+              data: impressions_offered,
+              backgroundColor: ["red", "blue", "green", "blue", "red", "blue", "blue", "green", "blue", "red", "blue", "blue", "green", "blue", "red", "blue", "blue", "green", "blue", "red", "blue", "blue", "green", "blue", "red", "blue"], 
+ fillColor: "rgba(220,220,220,0.5)", 
+              strokeColor: "rgba(220,220,220,0.8)", 
+              highlightFill: "rgba(220,220,220,0.75)",
+              highlightStroke: "rgba(220,220,220,1)",
+              borderWidth: 4
+            }
+          ]
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+      console.log("this is app iste ",appSiteId)
+  };
+
+  useEffect(() => {
+    chart();
+  }, []);
   return (
-    <>
-      <div className="chart2">
-        <div className="c3">CHART 2</div>
-        <Chart
-          width={"700px"}
-          height={"400px"}
-          chartType="BarChart"
-          loader={<div>Loading Chart</div>}
-          data={[
-            ["appSiteId", "impressions_offered"],
-            [c, b],
-          ]}
+    <div className="App">
+      <h1>CHART - 2</h1>
+      <div>
+        <Bar
+          data={chartData}
           options={{
-            title: "Data Analytics Board",
-            colors: ["#b0120a", "#ffab91"],
-            hAxis: {
-              title: "Impressions Offered",
-              minValue: 100,
-            },
-            vAxis: {
-              title: "appSiteId",
-            },
+            responsive: true,
+            title: { text: "THICCNESS SCALE", display: true },
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    autoSkip: true,
+                    maxTicksLimit: 10,
+                    beginAtZero: true
+                  },
+                  gridLines: {
+                    display: false
+                  }
+                }
+              ],
+              xAxes: [
+                {
+                  gridLines: {
+                    display: false
+                  }
+                }
+              ]
+            }
           }}
-          // For tests
-          rootProps={{ "data-testid": "4" }}
         />
-        {/* {t1data.result.data.map((value, index) => {
-          MapPublis.push(value.publisherId);
-          MapImp.push(value.impressions_offered);
-          return (
-            <>
-              <Chart
-                width={"500px"}
-                height={"300px"}
-                chartType="BarChart"
-                loader={<div>Loading Chart</div>}
-                data={[
-                  ["publisherId", "impressions_offered"],
-                  [value.publisherId, Number(value.impressions_offered)],
-                ]}
-                options={{
-                  title: "Population of Largest U.S. Cities",
-                  chartArea: { width: "50%" },
-                  colors: ["#b0120a", "#ffab91"],
-                  hAxis: {
-                    title: "Total Population",
-                    minValue: 0,
-                  },
-                  vAxis: {
-                    title: "City",
-                  },
-                }}
-                // For tests
-                rootProps={{ "data-testid": "4" }}
-              />
-            </>
-          );
-        })} */}
-        <br />
       </div>
-    </>
+    </div>
   );
-}
+};
+
+export default Dankmemes;
