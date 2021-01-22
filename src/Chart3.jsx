@@ -52,11 +52,11 @@ const Dankmemes = () => {
         console.log(res);
         for (const dataObj of res.result.data) {
           cm001.push(parseInt(dataObj.cm001));
-          CM001_percent.push(parseInt(dataObj.CM001_percent));
-          advertiserId.push(parseInt(dataObj.advertiserId));
+          CM001_percent.push(dataObj.CM001_percent);
+          advertiserId.push(dataObj.advertiserId);
         }
         setChartData({
-          labels: cm001,
+          labels: advertiserId, cm001,
           datasets: [
             {
               label: "level of thiccness",
