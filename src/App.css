@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  position: relative;
+  top: -40px;
+}
+.AppChart1 {
+  text-align: center;
+  position: relative;
+  top: -40px;
 }
 
 .App-logo {

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component,useEffect } from "react";
 import moment from "moment";
 import {
   DateRangePicker,
@@ -7,7 +7,7 @@ import {
 } from "react-dates";
 import "react-dates/lib/css/_datepicker.css";
 import "react-dates/initialize";
-
+import NewChart from './NewChart'
 export default class DatePicker extends Component {
   constructor(props) {
     super(props);
@@ -15,25 +15,38 @@ export default class DatePicker extends Component {
     this.state = {
       startDate: null,
       endDate: null,
+      visible:false,
     };
   }
 
   startClick = () => {
-    alert(this.state.startDate);
+    alert(Date.UTC(this.state.startDate));
   };
 
   endClick = () => {
     alert(this.state.endDate);
-  };
+    // this.state.visible === true ? <NewChart startdate={Date.parse(this.state.startDate)} enddate={Date.parse(this.state.endDate)} /> : <> </>
 
-  render() {
+  };
+  handleLangChange = () => {
+    var date = {
+      startDate : Date.parse(this.state.startDate),
+      endDate : Date.parse(this.state.endDate)
+
+    };
+    this.props.onDate(date);            
+}
+   render() {
     const today = moment();
     const disableFutureDt = (current) => {
       return current.isAfter(today);
     };
 
+    // console.log(Date.parse(this.state.startDate))
+    // console.log(this.state.end)
     return (
       <div>
+        
         <DateRangePicker
           startDate={this.state.startDate} // momentPropTypes.momentObj or null,
           startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
@@ -48,8 +61,7 @@ export default class DatePicker extends Component {
         />
         <br />
         <br />
-        {/* <button onClick={this.startClick}>start date</button>
-        <button onClick={this.endClick}>end date</button> */}
+        
       </div>
     );
   }

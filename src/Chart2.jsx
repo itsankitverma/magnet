@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Bar } from "react-chartjs-2";
 import data1 from "./Data2.json";
+import "./App.css"
 
 const Chart2 = () => {
   const [chartData, setChartData] = useState({});
@@ -21,7 +22,7 @@ const Chart2 = () => {
   const chart = () => {
     let appSiteId = [];
     let impressions_offered = [];
-     
+      
       fetch("https://sigviewauth.sigmoid.io/api/v1/getData", requestOptions)
       .then((response) => response.json())
       .then(res => {

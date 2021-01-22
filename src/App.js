@@ -4,6 +4,7 @@ import Chart1 from "./Chart1";
 import Chart2 from "./Chart2";
 import Chart3 from "./Chart3";
 import Buttons from "./Buttons";
+import NewChart from './NewChart'
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <div className="refresh">
           <Buttons />
         </div>
-        <Chart1 />
+        <NewChart />
         <Chart2 />
         <Chart3 />
       </div>
