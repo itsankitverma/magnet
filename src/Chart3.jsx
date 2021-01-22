@@ -21,10 +21,10 @@ const Chart3 = () => {
     let cm001 = [];
     let CM001_percent = [];
     let advertiserId = [];
-    
-      fetch("https://sigview.sigmoid.io/api/v1/getData", requestOptions)
+
+    fetch("https://sigview.sigmoid.io/api/v1/getData", requestOptions)
       .then((response) => response.json())
-      .then(res => {
+      .then((res) => {
         console.log(res);
         for (const dataObj of res.result.data) {
           cm001.push(parseInt(dataObj.cm001));
@@ -37,27 +37,94 @@ const Chart3 = () => {
             {
               label: "Data Analysis",
               data: CM001_percent,
-              backgroundColor: [ "red", "blue", "green", "blue", "red", "blue",
-              "red", "blue", "green", "blue", "red", "blue",
-              "red", "blue", "green", "blue", "red", "blue", "blue", 
-              "green", "blue", "red", "blue", "blue", "green", "blue",
-               "red", "blue", "blue", "green", "blue", "red", "blue", "blue",
-                "green", "blue", "red", "blue", "red", "blue", "green", "blue", "red", "blue",
-                "red", "blue", "green", "blue", "red", "blue",
-                "red", "blue", "green", "blue", "red", "blue", "blue", 
-                "green", "blue", "red", "blue", "blue", "green", "blue",
-                 "red", "blue", "blue", "green", "blue", "red", "blue", "blue",
-                  "green", "blue", "red", "blue"], 
- fillColor: "rgba(220,220,220,0.5)", 
-              strokeColor: "rgba(220,220,220,0.8)", 
+              backgroundColor: [
+                "red",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "red",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "red",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "red",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "red",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "red",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+              ],
+              fillColor: "rgba(220,220,220,0.5)",
+              strokeColor: "rgba(220,220,220,0.8)",
               highlightFill: "rgba(220,220,220,0.75)",
               highlightStroke: "rgba(220,220,220,1)",
-              borderWidth: 4
-            }
-          ]
+              borderWidth: 4,
+            },
+          ],
         });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   };
@@ -79,21 +146,21 @@ const Chart3 = () => {
                   ticks: {
                     autoSkip: true,
                     maxTicksLimit: 10,
-                    beginAtZero: true
+                    beginAtZero: true,
                   },
                   gridLines: {
-                    display: false
-                  }
-                }
+                    display: false,
+                  },
+                },
               ],
               xAxes: [
                 {
                   gridLines: {
-                    display: false
-                  }
-                }
-              ]
-            }
+                    display: false,
+                  },
+                },
+              ],
+            },
           }}
         />
       </div>

@@ -1,13 +1,10 @@
-import React, { Component,useEffect } from "react";
+import React, { Component } from "react";
 import moment from "moment";
 import {
   DateRangePicker,
-  SingleDatePicker,
-  DayPickerRangeController,
 } from "react-dates";
 import "react-dates/lib/css/_datepicker.css";
 import "react-dates/initialize";
-import NewChart from './NewChart'
 export default class DatePicker extends Component {
   constructor(props) {
     super(props);
@@ -57,7 +54,6 @@ export default class DatePicker extends Component {
           } // PropTypes.func.isRequired,
           focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
           onFocusChange={(focusedInput) => this.setState({ focusedInput })} // PropTypes.func.isRequired,
-          isValidDate={disableFutureDt}
         />
         <br />
         <br />

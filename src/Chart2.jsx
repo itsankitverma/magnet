@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Bar } from "react-chartjs-2";
 import data1 from "./Data2.json";
-import "./App.css"
+import "./App.css";
 
 const Chart2 = () => {
   const [chartData, setChartData] = useState({});
@@ -18,14 +18,13 @@ const Chart2 = () => {
     body: JSON.stringify(data1),
   };
 
-
   const chart = () => {
     let appSiteId = [];
     let impressions_offered = [];
-      
-      fetch("https://sigviewauth.sigmoid.io/api/v1/getData", requestOptions)
+
+    fetch("https://sigviewauth.sigmoid.io/api/v1/getData", requestOptions)
       .then((response) => response.json())
-      .then(res => {
+      .then((res) => {
         console.log(res);
         for (const dataObj of res.result.data) {
           appSiteId.push(dataObj.appSiteId);
@@ -37,30 +36,97 @@ const Chart2 = () => {
             {
               label: "Data Analysis",
               data: impressions_offered,
-              backgroundColor: [ "red", "blue", "green", "blue", "red", "blue",
-              "red", "blue", "green", "blue", "red", "blue",
-              "red", "blue", "green", "blue", "red", "blue", "blue", 
-              "green", "blue", "red", "blue", "blue", "green", "blue",
-               "red", "blue", "blue", "green", "blue", "red", "blue", "blue",
-                "green", "blue", "red", "blue", "red", "blue", "green", "blue", "red", "blue",
-                "red", "blue", "green", "blue", "red", "blue",
-                "red", "blue", "green", "blue", "red", "blue", "blue", 
-                "green", "blue", "red", "blue", "blue", "green", "blue",
-                 "red", "blue", "blue", "green", "blue", "red", "blue", "blue",
-                  "green", "blue", "red", "blue"], 
-              fillColor: "rgba(220,220,220,0.5)", 
-              strokeColor: "rgba(220,220,220,0.8)", 
+              backgroundColor: [
+                "red",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "red",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "red",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "red",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "red",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "red",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+                "blue",
+                "green",
+                "blue",
+                "red",
+                "blue",
+              ],
+              fillColor: "rgba(220,220,220,0.5)",
+              strokeColor: "rgba(220,220,220,0.8)",
               highlightFill: "rgba(220,220,220,0.75)",
               highlightStroke: "rgba(220,220,220,1)",
-              borderWidth: 4
-            }
-          ]
+              borderWidth: 4,
+            },
+          ],
         });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
-      console.log("this is app iste ",appSiteId)
+    // console.log("this is app iste ", appSiteId);
   };
 
   useEffect(() => {
@@ -81,21 +147,21 @@ const Chart2 = () => {
                   ticks: {
                     autoSkip: true,
                     maxTicksLimit: 10,
-                    beginAtZero: true
+                    beginAtZero: true,
                   },
                   gridLines: {
-                    display: false
-                  }
-                }
+                    display: false,
+                  },
+                },
               ],
               xAxes: [
                 {
                   gridLines: {
-                    display: false
-                  }
-                }
-              ]
-            }
+                    display: false,
+                  },
+                },
+              ],
+            },
           }}
         />
       </div>
