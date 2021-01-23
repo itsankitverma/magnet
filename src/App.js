@@ -11,23 +11,133 @@ import data3 from "./Data3.json";
 
 function App() {
   const [chartData1, setChartData1] = useState({});
-  const [startdate, setstartdate] = useState([]);
+  const [newstartdate, setnewstartdate] = useState("");
+  const [newenddate, setnewenddate] = useState("");
   const [chartData2, setChartData2] = useState({});
   const [chartData3, setChartData3] = useState({});
 
-  const requestOptions = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      accept: "application/json",
-      "x-auth-token":
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyLXBxbGJZcVFHNmp2dyszeVZvKzFlS3pJUWl1M00yOXVzM1JzdTZMQUpvMmZ5blEyXC9ES1VWVEVTXC9SanFYZ0cwYzRWRWt3UytDaU95bVR0T1EyTjdtSG5lSTZFek11OVVPTm5KTHdiV3FXU0djMXc9PSIsImlzcyI6InJhaHVsa3VtYXIiLCJleHAiOjE2MTE0NjkxNTMsImlhdCI6MTYxMTM4Mjc1MywianRpIjoiOWU5OWQ3ZGE3OTFhZTdmZDQ5NjdhYjU1ZDcyMWU5YmNkMjMxZWY1OTgyNGZiMjhjYWExOWVkYTNiMDdjMDRiYjU1N2NjMWFjMTRjODI4YTExZGM3YmU5YjhiNWQ2YzE0OThjNDFkNjFjNGUzZTEwYjYyYWM0Mjg0YzJmZDQ0ZWRmMWUwZGY5ODZkMTVhN2NjMTZlYmNlNzhhZmIxMzg4NTc4MzdmYzY5NzYwZjQ1M2ZmZmRkYTM3YWFlNjhhNTEzMmIyZmZmZTQxNGYzZGU0YTY3NWUwM2MyZjk1MmRlNGI5MDdjMmQzZmFiMDgxYTM5NjMyM2I1MWExOTQxN2I0NCJ9.LEVPpRP4XhlL2_Li-VIqETOK3YvyyFhleBBnqwK-X0Y",
-    },
-
-    body: JSON.stringify(data1),
-  };
+  let bgc = [
+    "red",
+    "blue",
+    "green",
+    "blue",
+    "red",
+    "blue",
+    "red",
+    "blue",
+    "green",
+    "blue",
+    "red",
+    "blue",
+    "red",
+    "blue",
+    "green",
+    "blue",
+    "red",
+    "blue",
+    "blue",
+    "green",
+    "blue",
+    "red",
+    "blue",
+    "blue",
+    "green",
+    "blue",
+    "red",
+    "blue",
+    "blue",
+    "green",
+    "blue",
+    "red",
+    "blue",
+    "blue",
+    "green",
+    "blue",
+    "red",
+    "blue",
+    "red",
+    "blue",
+    "green",
+    "blue",
+    "red",
+    "blue",
+    "red",
+    "blue",
+    "green",
+    "blue",
+    "red",
+    "blue",
+    "red",
+    "blue",
+    "green",
+    "blue",
+    "red",
+    "blue",
+    "blue",
+    "green",
+    "blue",
+    "red",
+    "blue",
+    "blue",
+    "green",
+    "blue",
+    "red",
+    "blue",
+    "blue",
+    "green",
+    "blue",
+    "red",
+    "blue",
+    "blue",
+    "green",
+    "blue",
+    "red",
+    "blue",
+  ];
 
   const chart1 = () => {
+    let chart1body = [
+      {
+        _id: "dashboard1516252439345",
+        emailId: "candidate@sigmoid.com",
+        orgViewReq: { organization: "DemoTest", view: "Auction" },
+        chartObject: {
+          metadata: {
+            title: "chartobject:1516252439345",
+            img_thumbnail: "../img/chart.png",
+            chartType: "table",
+            dataLimit: 50,
+          },
+          requestParam: {
+            granularity: "hour",
+            timeZone: { name: "UTC (+00:00)", location: "UTC" },
+            dateRange: {
+              startDate: newstartdate.toString(),
+              endDate: newenddate.toString(),
+            },
+            xAxis: ["D044"],
+            yAxis: ["M002"],
+            approxCountDistinct: [],
+            specialCalculation: [],
+            filter: [],
+            orderBy: { metricOrdByList: [{ id: "M002", desc: true }] },
+            percentCalList: [],
+          },
+        },
+      },
+    ];
+
+    let requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        accept: "application/json",
+        "x-auth-token":
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyLXBxbGJZcVFHNmp2dyszeVZvKzFlS3pJUWl1M00yOXVzM1JzdTZMQUpvMmZ5blEyXC9ES1VWVEVTXC9SanFYZ0cwYzRWRWt3UytDaU95bVR0T1EyTjdtSG5lSTZFek11OVVPTm5KTHdiV3FXU0djMXc9PSIsImlzcyI6InJhaHVsa3VtYXIiLCJleHAiOjE2MTE0NjkxNTMsImlhdCI6MTYxMTM4Mjc1MywianRpIjoiOWU5OWQ3ZGE3OTFhZTdmZDQ5NjdhYjU1ZDcyMWU5YmNkMjMxZWY1OTgyNGZiMjhjYWExOWVkYTNiMDdjMDRiYjU1N2NjMWFjMTRjODI4YTExZGM3YmU5YjhiNWQ2YzE0OThjNDFkNjFjNGUzZTEwYjYyYWM0Mjg0YzJmZDQ0ZWRmMWUwZGY5ODZkMTVhN2NjMTZlYmNlNzhhZmIxMzg4NTc4MzdmYzY5NzYwZjQ1M2ZmZmRkYTM3YWFlNjhhNTEzMmIyZmZmZTQxNGYzZGU0YTY3NWUwM2MyZjk1MmRlNGI5MDdjMmQzZmFiMDgxYTM5NjMyM2I1MWExOTQxN2I0NCJ9.LEVPpRP4XhlL2_Li-VIqETOK3YvyyFhleBBnqwK-X0Y",
+      },
+
+      body: JSON.stringify(chart1body[0]),
+    };
     let publisherId = [];
     let impressions_offered = [];
 
@@ -36,7 +146,7 @@ function App() {
       .then((res) => {
         console.log(res);
         setChartData1(new Date());
-        console.log(startdate);
+        // console.log(startdate);
 
         for (const dataObj of res.result.data) {
           publisherId.push(dataObj.publisherId);
@@ -48,34 +158,7 @@ function App() {
             {
               label: "Data Analysis",
               data: impressions_offered,
-              backgroundColor: [
-                "red",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-              ],
+              backgroundColor: bgc,
               fillColor: "rgba(220,220,220,0.5)",
               strokeColor: "rgba(220,220,220,0.8)",
               highlightFill: "rgba(220,220,220,0.75)",
@@ -120,84 +203,7 @@ function App() {
             {
               label: "Data Analysis",
               data: impressions_offered,
-              backgroundColor: [
-                "red",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "red",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "red",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "red",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "red",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "red",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-              ],
+              backgroundColor: bgc,
               fillColor: "rgba(220,220,220,0.5)",
               strokeColor: "rgba(220,220,220,0.8)",
               highlightFill: "rgba(220,220,220,0.75)",
@@ -210,7 +216,6 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-    // console.log("this is app iste ", appSiteId);
   };
 
   const requestOptions3 = {
@@ -245,84 +250,7 @@ function App() {
             {
               label: "Data Analysis",
               data: CM001_percent,
-              backgroundColor: [
-                "red",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "red",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "red",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "red",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "red",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "red",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-                "blue",
-                "green",
-                "blue",
-                "red",
-                "blue",
-              ],
+              backgroundColor: bgc,
               fillColor: "rgba(220,220,220,0.5)",
               strokeColor: "rgba(220,220,220,0.8)",
               highlightFill: "rgba(220,220,220,0.75)",
@@ -341,13 +269,39 @@ function App() {
     chart3();
     chart1();
     chart4();
-  }, []);
+  }, [newstartdate, newenddate]);
+
+  const initdate = (startdate, enddate) => {
+    setnewstartdate(
+      Math.floor(new Date(startdate._d).getTime() / 1000.0) * 1000
+    );
+    setnewenddate(Math.floor(new Date(enddate._d).getTime() / 1000.0) * 1000);
+  };
+  const selectDateRange = (daterange) => {
+    // console.log(
+    //   "daterange is ",
+    //   Math.floor(new Date(daterange.start._d).getTime() / 1000.0) * 1000
+    // );
+    // console.log(
+    //   "endrange is ",
+    //   Math.floor(new Date(daterange.end._d).getTime() / 1000.0) * 1000
+    // );
+    if (daterange.end._d) {
+      setnewstartdate(
+        Math.floor(new Date(daterange.start._d).getTime() / 1000.0) * 1000
+      );
+      setnewenddate(
+        Math.floor(new Date(daterange.end._d).getTime() / 1000.0) * 1000
+      );
+    }
+  };
+
   return (
     <>
       <div className="blocks">
         <h4>Data Analytics Application Dashboard</h4>
         <div className="h4">
-          <DatePicker />
+          <DatePicker selectDateRange={selectDateRange} initdate={initdate} />
         </div>
         <div className="refresh">
           <Buttons />

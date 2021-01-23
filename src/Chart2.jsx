@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Bar } from "react-chartjs-2";
 import data2 from "./Data2.json";
 import "./App.css";

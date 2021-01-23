@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Pie } from "react-chartjs-2";
 import data3 from "./Data3.json";
 
