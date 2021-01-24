@@ -3,7 +3,7 @@ import { Pie } from "react-chartjs-2";
 import data3 from "./Data3.json";
 
 const Chart3 = (props) => {
-  const [chartData3, setChartData3] = useState({});
+  // const [chartData3, setChartData3] = useState({});
 
   // const requestOptions3 = {
   //   method: "POST",

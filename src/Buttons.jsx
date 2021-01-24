@@ -1,4 +1,5 @@
 import React from "react";
+import Button from '@material-ui/core/Button';
 
 function Buttons(props) {
   function refreshPage() {
@@ -12,7 +13,7 @@ function Buttons(props) {
       >
         Activity Dashboard Details - ON CliCk
       </button> */}
-      <button
+      <Button 
         style={{
           marginLeft: 40,
           position: "relative",
@@ -21,9 +22,10 @@ function Buttons(props) {
           cursor: "pointer",
         }}
         onClick={refreshPage}
+        variant="contained"
       >
         Refresh
-      </button>
+      </Button >
     </>
   );
 }

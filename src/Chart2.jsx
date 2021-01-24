@@ -4,7 +4,7 @@ import data2 from "./Data2.json";
 import "./App.css";
 
 const Chart2 = (props) => {
-  const [chartData2, setChartData2] = useState({});
+  // const [chartData2, setChartData2] = useState({});
 
   // const requestOptions2 = {
   //   method: "POST",

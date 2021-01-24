@@ -40,7 +40,7 @@ class Example extends React.Component {
   renderSelectionValue = () => {
     return (
       <div>
-        <div>Selection</div>
+        {/* <div>Selection</div> */}
         {/* {this.state.value.start.format("YYYY-MM-DD")} <br />
         {this.state.value.end.format("YYYY-MM-DD")} */}
       </div>
@@ -54,7 +54,7 @@ class Example extends React.Component {
         "Content-Type": "application/json",
         accept: "application/json",
         "x-auth-token":
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyLXBxbGJZcVFHNmp2dyszeVZvKzFlS3pJUWl1M00yOXVzM1JzdTZMQUpvMmZ5blEyXC9ES1VWVEVTXC9SanFYZ0cwYzRWRWt3UytDaU95bVR0T1EyTjdtSG5lSTZFek11OVVPTm5KTHdiV3FXU0djMXc9PSIsImlzcyI6InJhaHVsa3VtYXIiLCJleHAiOjE2MTE0NjkxNTMsImlhdCI6MTYxMTM4Mjc1MywianRpIjoiOWU5OWQ3ZGE3OTFhZTdmZDQ5NjdhYjU1ZDcyMWU5YmNkMjMxZWY1OTgyNGZiMjhjYWExOWVkYTNiMDdjMDRiYjU1N2NjMWFjMTRjODI4YTExZGM3YmU5YjhiNWQ2YzE0OThjNDFkNjFjNGUzZTEwYjYyYWM0Mjg0YzJmZDQ0ZWRmMWUwZGY5ODZkMTVhN2NjMTZlYmNlNzhhZmIxMzg4NTc4MzdmYzY5NzYwZjQ1M2ZmZmRkYTM3YWFlNjhhNTEzMmIyZmZmZTQxNGYzZGU0YTY3NWUwM2MyZjk1MmRlNGI5MDdjMmQzZmFiMDgxYTM5NjMyM2I1MWExOTQxN2I0NCJ9.LEVPpRP4XhlL2_Li-VIqETOK3YvyyFhleBBnqwK-X0Y",
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyLU04eXViQStHRUlOQ2d2UTNKQTNVM1ZvYzRcL25HNE1EelkwdEp6dTAzS2g5OWoxNWhsQURPVTNLOFljU2pyWWc2XC9rdjIwUHl5aHpSMlp4Z2ZhbWswZGFRZ1wvaHplZEVRQlUwbVp6QnRNZTRaTHVBPT0iLCJpc3MiOiJyYWh1bGt1bWFyIiwiZXhwIjoxNjExNTU2NTg4LCJpYXQiOjE2MTE0NzAxODgsImp0aSI6IjU4OWEyZDYyM2E1ZDNkZDE1NDZmYzYzM2QyZGEzMDBhZTE3MGI1MjBiMDgxOWI3MTllNTRjNTdjMGYwNTlkNjUyY2ZmNzNiMDEwNjk5ZmRiMzBjZDQyMDQ4NTQ4ZWFlN2M3YWY2YmU3NjNmMTFiODllNTQyNGY5ZjdiOWUxODYwNWQ4YTI0ZGU3ZTg2NGUzNTNhYjhkMWE5OTY2OGFjOTgyNTQ1OGEwZGM3M2NjNzcxYTNjN2VkNjlhMmU4YWQwYjVlMGZlNmRkZGQ4N2ViNzJjMzcyMTg5MzAxZmNjMjZjZjIwMDU5MjA2NjRlNTViZmYxZTg3NWMwOWIwN2ZjNTEifQ.XZU5ztI82f914PCSM-uHfMFsJ1e5lggrxmnHJZxh2FU",
       },
 
       body: JSON.stringify({ organization: "DemoTest", view: "Auction" }),
@@ -79,13 +79,13 @@ class Example extends React.Component {
       <div>
         <div>{this.renderSelectionValue()}</div>
 
-        <div>
+        {/* <div>
           <input
             type="button"
             value="Toggle date picker"
             onClick={this.onToggle}
           />
-        </div>
+        </div> */}
         {this.state.startDate !== null ? (
           <DateRangePickerNew
             value={this.state.value}

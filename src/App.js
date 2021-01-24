@@ -12,7 +12,11 @@ import data3 from "./Data3.json";
 function App() {
   const [chartData1, setChartData1] = useState({});
   const [newstartdate, setnewstartdate] = useState("");
+  const [newstartdate2, setnewstartdate2] = useState("");
+  const [newstartdate3, setnewstartdate3] = useState("");
   const [newenddate, setnewenddate] = useState("");
+  const [newenddate2, setnewenddate2] = useState("");
+  const [newenddate3, setnewenddate3] = useState("");
   const [chartData2, setChartData2] = useState({});
   const [chartData3, setChartData3] = useState({});
 
@@ -95,6 +99,8 @@ function App() {
     "blue",
   ];
 
+  // first chart dynamic
+
   const chart1 = () => {
     let chart1body = [
       {
@@ -133,11 +139,12 @@ function App() {
         "Content-Type": "application/json",
         accept: "application/json",
         "x-auth-token":
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyLXBxbGJZcVFHNmp2dyszeVZvKzFlS3pJUWl1M00yOXVzM1JzdTZMQUpvMmZ5blEyXC9ES1VWVEVTXC9SanFYZ0cwYzRWRWt3UytDaU95bVR0T1EyTjdtSG5lSTZFek11OVVPTm5KTHdiV3FXU0djMXc9PSIsImlzcyI6InJhaHVsa3VtYXIiLCJleHAiOjE2MTE0NjkxNTMsImlhdCI6MTYxMTM4Mjc1MywianRpIjoiOWU5OWQ3ZGE3OTFhZTdmZDQ5NjdhYjU1ZDcyMWU5YmNkMjMxZWY1OTgyNGZiMjhjYWExOWVkYTNiMDdjMDRiYjU1N2NjMWFjMTRjODI4YTExZGM3YmU5YjhiNWQ2YzE0OThjNDFkNjFjNGUzZTEwYjYyYWM0Mjg0YzJmZDQ0ZWRmMWUwZGY5ODZkMTVhN2NjMTZlYmNlNzhhZmIxMzg4NTc4MzdmYzY5NzYwZjQ1M2ZmZmRkYTM3YWFlNjhhNTEzMmIyZmZmZTQxNGYzZGU0YTY3NWUwM2MyZjk1MmRlNGI5MDdjMmQzZmFiMDgxYTM5NjMyM2I1MWExOTQxN2I0NCJ9.LEVPpRP4XhlL2_Li-VIqETOK3YvyyFhleBBnqwK-X0Y",
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyLU04eXViQStHRUlOQ2d2UTNKQTNVM1ZvYzRcL25HNE1EelkwdEp6dTAzS2g5OWoxNWhsQURPVTNLOFljU2pyWWc2XC9rdjIwUHl5aHpSMlp4Z2ZhbWswZGFRZ1wvaHplZEVRQlUwbVp6QnRNZTRaTHVBPT0iLCJpc3MiOiJyYWh1bGt1bWFyIiwiZXhwIjoxNjExNTU2NTg4LCJpYXQiOjE2MTE0NzAxODgsImp0aSI6IjU4OWEyZDYyM2E1ZDNkZDE1NDZmYzYzM2QyZGEzMDBhZTE3MGI1MjBiMDgxOWI3MTllNTRjNTdjMGYwNTlkNjUyY2ZmNzNiMDEwNjk5ZmRiMzBjZDQyMDQ4NTQ4ZWFlN2M3YWY2YmU3NjNmMTFiODllNTQyNGY5ZjdiOWUxODYwNWQ4YTI0ZGU3ZTg2NGUzNTNhYjhkMWE5OTY2OGFjOTgyNTQ1OGEwZGM3M2NjNzcxYTNjN2VkNjlhMmU4YWQwYjVlMGZlNmRkZGQ4N2ViNzJjMzcyMTg5MzAxZmNjMjZjZjIwMDU5MjA2NjRlNTViZmYxZTg3NWMwOWIwN2ZjNTEifQ.XZU5ztI82f914PCSM-uHfMFsJ1e5lggrxmnHJZxh2FU",
       },
 
       body: JSON.stringify(chart1body[0]),
     };
+
     let publisherId = [];
     let impressions_offered = [];
 
@@ -173,19 +180,52 @@ function App() {
       });
   };
 
-  const requestOptions2 = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      accept: "application/json",
-      "x-auth-token":
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyLXBxbGJZcVFHNmp2dyszeVZvKzFlS3pJUWl1M00yOXVzM1JzdTZMQUpvMmZ5blEyXC9ES1VWVEVTXC9SanFYZ0cwYzRWRWt3UytDaU95bVR0T1EyTjdtSG5lSTZFek11OVVPTm5KTHdiV3FXU0djMXc9PSIsImlzcyI6InJhaHVsa3VtYXIiLCJleHAiOjE2MTE0NjkxNTMsImlhdCI6MTYxMTM4Mjc1MywianRpIjoiOWU5OWQ3ZGE3OTFhZTdmZDQ5NjdhYjU1ZDcyMWU5YmNkMjMxZWY1OTgyNGZiMjhjYWExOWVkYTNiMDdjMDRiYjU1N2NjMWFjMTRjODI4YTExZGM3YmU5YjhiNWQ2YzE0OThjNDFkNjFjNGUzZTEwYjYyYWM0Mjg0YzJmZDQ0ZWRmMWUwZGY5ODZkMTVhN2NjMTZlYmNlNzhhZmIxMzg4NTc4MzdmYzY5NzYwZjQ1M2ZmZmRkYTM3YWFlNjhhNTEzMmIyZmZmZTQxNGYzZGU0YTY3NWUwM2MyZjk1MmRlNGI5MDdjMmQzZmFiMDgxYTM5NjMyM2I1MWExOTQxN2I0NCJ9.LEVPpRP4XhlL2_Li-VIqETOK3YvyyFhleBBnqwK-X0Y",
-    },
-
-    body: JSON.stringify(data2),
-  };
+  // second chart dynamic
 
   const chart4 = () => {
+    let chart1body = [
+      {
+        _id: "dashboard1516252235693",
+        emailId: "candidate@sigmoid.com",
+        orgViewReq: { organization: "DemoTest", view: "Auction" },
+        chartObject: {
+          metadata: {
+            title: "chartobject:1516252235693",
+            img_thumbnail: "../img/chart.png",
+            chartType: "table",
+            dataLimit: 50,
+          },
+          requestParam: {
+            granularity: "hour",
+            timeZone: { name: "UTC (+00:00)", location: "UTC" },
+            dateRange: {
+              startDate: newstartdate2.toString(),
+              endDate: newenddate2.toString(),
+            },
+            xAxis: ["D017"],
+            yAxis: ["M002"],
+            approxCountDistinct: [],
+            specialCalculation: [],
+            filter: [],
+            orderBy: { metricOrdByList: [{ id: "M002", desc: true }] },
+            percentCalList: [],
+          },
+        },
+      },
+    ];
+
+    let requestOptions2 = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        accept: "application/json",
+        "x-auth-token":
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyLU04eXViQStHRUlOQ2d2UTNKQTNVM1ZvYzRcL25HNE1EelkwdEp6dTAzS2g5OWoxNWhsQURPVTNLOFljU2pyWWc2XC9rdjIwUHl5aHpSMlp4Z2ZhbWswZGFRZ1wvaHplZEVRQlUwbVp6QnRNZTRaTHVBPT0iLCJpc3MiOiJyYWh1bGt1bWFyIiwiZXhwIjoxNjExNTU2NTg4LCJpYXQiOjE2MTE0NzAxODgsImp0aSI6IjU4OWEyZDYyM2E1ZDNkZDE1NDZmYzYzM2QyZGEzMDBhZTE3MGI1MjBiMDgxOWI3MTllNTRjNTdjMGYwNTlkNjUyY2ZmNzNiMDEwNjk5ZmRiMzBjZDQyMDQ4NTQ4ZWFlN2M3YWY2YmU3NjNmMTFiODllNTQyNGY5ZjdiOWUxODYwNWQ4YTI0ZGU3ZTg2NGUzNTNhYjhkMWE5OTY2OGFjOTgyNTQ1OGEwZGM3M2NjNzcxYTNjN2VkNjlhMmU4YWQwYjVlMGZlNmRkZGQ4N2ViNzJjMzcyMTg5MzAxZmNjMjZjZjIwMDU5MjA2NjRlNTViZmYxZTg3NWMwOWIwN2ZjNTEifQ.XZU5ztI82f914PCSM-uHfMFsJ1e5lggrxmnHJZxh2FU",
+      },
+
+      body: JSON.stringify(chart1body[0]),
+    };
+
     let appSiteId = [];
     let impressions_offered = [];
 
@@ -218,19 +258,53 @@ function App() {
       });
   };
 
-  const requestOptions3 = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      accept: "application/json",
-      "x-auth-token":
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyLXBxbGJZcVFHNmp2dyszeVZvKzFlS3pJUWl1M00yOXVzM1JzdTZMQUpvMmZ5blEyXC9ES1VWVEVTXC9SanFYZ0cwYzRWRWt3UytDaU95bVR0T1EyTjdtSG5lSTZFek11OVVPTm5KTHdiV3FXU0djMXc9PSIsImlzcyI6InJhaHVsa3VtYXIiLCJleHAiOjE2MTE0NjkxNTMsImlhdCI6MTYxMTM4Mjc1MywianRpIjoiOWU5OWQ3ZGE3OTFhZTdmZDQ5NjdhYjU1ZDcyMWU5YmNkMjMxZWY1OTgyNGZiMjhjYWExOWVkYTNiMDdjMDRiYjU1N2NjMWFjMTRjODI4YTExZGM3YmU5YjhiNWQ2YzE0OThjNDFkNjFjNGUzZTEwYjYyYWM0Mjg0YzJmZDQ0ZWRmMWUwZGY5ODZkMTVhN2NjMTZlYmNlNzhhZmIxMzg4NTc4MzdmYzY5NzYwZjQ1M2ZmZmRkYTM3YWFlNjhhNTEzMmIyZmZmZTQxNGYzZGU0YTY3NWUwM2MyZjk1MmRlNGI5MDdjMmQzZmFiMDgxYTM5NjMyM2I1MWExOTQxN2I0NCJ9.LEVPpRP4XhlL2_Li-VIqETOK3YvyyFhleBBnqwK-X0Y",
-    },
-
-    body: JSON.stringify(data3),
-  };
+  // third chart dynamic
 
   const chart3 = () => {
+    let chart1body = [
+      {
+        _id: "Datastory_ChartId_1535224664111",
+        emailId: "candidate@sigmoid.com",
+        orgViewReq: { organization: "DemoTest", view: "Auction" },
+        chartObject: {
+          metadata: {
+            title: "",
+            img_thumbnail: "images/pie.png",
+            chartType: "pie",
+            dataLimit: 500,
+          },
+          text: [],
+          requestParam: {
+            granularity: "hour",
+            timeZone: { name: "UTC (+00:00)", location: "UTC" },
+            dateRange: {
+              startDate: newstartdate3.toString(),
+              endDate: newenddate3.toString(),
+            },
+            xAxis: ["D005"],
+            yAxis: [],
+            approxCountDistinct: [],
+            specialCalculation: ["CM001"],
+            filter: [],
+            orderBy: { customMetricOrdByList: [{ id: "CM001", desc: true }] },
+            percentCalList: [{ id: "CM001" }],
+          },
+        },
+      },
+    ];
+
+    let requestOptions3 = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        accept: "application/json",
+        "x-auth-token":
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyLU04eXViQStHRUlOQ2d2UTNKQTNVM1ZvYzRcL25HNE1EelkwdEp6dTAzS2g5OWoxNWhsQURPVTNLOFljU2pyWWc2XC9rdjIwUHl5aHpSMlp4Z2ZhbWswZGFRZ1wvaHplZEVRQlUwbVp6QnRNZTRaTHVBPT0iLCJpc3MiOiJyYWh1bGt1bWFyIiwiZXhwIjoxNjExNTU2NTg4LCJpYXQiOjE2MTE0NzAxODgsImp0aSI6IjU4OWEyZDYyM2E1ZDNkZDE1NDZmYzYzM2QyZGEzMDBhZTE3MGI1MjBiMDgxOWI3MTllNTRjNTdjMGYwNTlkNjUyY2ZmNzNiMDEwNjk5ZmRiMzBjZDQyMDQ4NTQ4ZWFlN2M3YWY2YmU3NjNmMTFiODllNTQyNGY5ZjdiOWUxODYwNWQ4YTI0ZGU3ZTg2NGUzNTNhYjhkMWE5OTY2OGFjOTgyNTQ1OGEwZGM3M2NjNzcxYTNjN2VkNjlhMmU4YWQwYjVlMGZlNmRkZGQ4N2ViNzJjMzcyMTg5MzAxZmNjMjZjZjIwMDU5MjA2NjRlNTViZmYxZTg3NWMwOWIwN2ZjNTEifQ.XZU5ztI82f914PCSM-uHfMFsJ1e5lggrxmnHJZxh2FU",
+      },
+
+      body: JSON.stringify(chart1body[0]),
+    };
+
     let cm001 = [];
     let CM001_percent = [];
     let advertiserId = [];
@@ -266,10 +340,10 @@ function App() {
   };
 
   useEffect(() => {
-    chart3();
     chart1();
+    chart3();
     chart4();
-  }, [newstartdate, newenddate]);
+  }, [newstartdate, newenddate, newstartdate2, newenddate2, newstartdate3, newenddate3]);
 
   const initdate = (startdate, enddate) => {
     setnewstartdate(
@@ -291,6 +365,18 @@ function App() {
         Math.floor(new Date(daterange.start._d).getTime() / 1000.0) * 1000
       );
       setnewenddate(
+        Math.floor(new Date(daterange.end._d).getTime() / 1000.0) * 1000
+      );
+      setnewstartdate2(
+        Math.floor(new Date(daterange.start._d).getTime() / 1000.0) * 1000
+      );
+      setnewenddate2(
+        Math.floor(new Date(daterange.end._d).getTime() / 1000.0) * 1000
+      );
+      setnewstartdate3(
+        Math.floor(new Date(daterange.start._d).getTime() / 1000.0) * 1000
+      );
+      setnewenddate3(
         Math.floor(new Date(daterange.end._d).getTime() / 1000.0) * 1000
       );
     }
